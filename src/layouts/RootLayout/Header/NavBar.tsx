@@ -76,27 +76,29 @@ const NavMenu = styled.ul`
   list-style: none;
   display: flex;
   align-items: center;
+  margin-left: auto; /* Push the menu to the right side */
   li {
     margin-left: 1rem;
     color: ${({ theme }) => theme.colors.gray11};
   }
 
   @media (max-width: 768px) {
+    flex-direction: row; /* Horizontal direction for both states */
     background-color: white;
     position: absolute;
-    top: 0;
-    left: -100%; /* Initially off-screen to the left */
-    width: auto;
-    max-width: 100%;
-    height: 100%;
+    top: 50; /* Keep the menu at the top */
+    right: -100%; /* Initially off-screen */
+    width: auto; /* Allow the menu to expand horizontally */
+    max-width: 100%; /* Limit the menu width */
+    height: 100%; /* Take the full height of the viewport */
     overflow: hidden;
-    transition: left 0.2s ease-in-out; /* Slide in/out horizontally */
+    transition: right 0.2s ease-in-out; /* Slide in/out horizontally */
     li {
       margin: 0;
       padding: 0.5rem 1rem;
     }
     &.open {
-      left: 0; /* Slide the menu in from the left */
+      right: 0; /* Slide the menu in from the right */
     }
   }
 }`;
