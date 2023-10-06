@@ -1,9 +1,10 @@
-import styled from "@emotion/styled"
-import Link from "next/link"
-import { useState, useEffect } from "react"
+import styled from "@emotion/styled";
+import Link from "next/link";
+import { useState, useEffect, useRef } from "react";
 
 const NavBar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navMenuRef = useRef<HTMLUListElement>(null);
 
   const links = [
     { id: 1, name: "About", to: "/about" },
@@ -12,13 +13,16 @@ const NavBar: React.FC = () => {
     { id: 4, name: "Contact", to: "/contact" },
     { id: 5, name: "Contact", to: "/contact" },
     { id: 6, name: "Contact", to: "/contact" },
-    { id: 7, name: "Contact", to: "/contact" }
+    { id: 7, name: "Contact", to: "/contact" },
   ];
 
   useEffect(() => {
-    // Add an event listener to close the menu when clicking outside of it
     function handleOutsideClick(event: MouseEvent) {
-      if (menuOpen && !document.getElementById("nav-menu")?.contains(event.target as Node)) {
+      if (
+        menuOpen &&
+        navMenuRef.current &&
+        !navMenuRef.current.contains(event.target as Node)
+      ) {
         setMenuOpen(false);
       }
     }
@@ -27,7 +31,6 @@ const NavBar: React.FC = () => {
       document.addEventListener("click", handleOutsideClick);
     }
 
-    // Cleanup the event listener when the component unmounts
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
@@ -38,13 +41,17 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <StyledWrapper className="">
+    <StyledWrapper>
       <BurgerMenuButton onClick={toggleMenu}>
         <div className={`bar ${menuOpen ? "open" : ""}`} />
         <div className={`bar ${menuOpen ? "open" : ""}`} />
         <div className={`bar ${menuOpen ? "open" : ""}`} />
       </BurgerMenuButton>
-      <ul id="nav-menu" className={`nav-menu ${menuOpen ? "open" : ""}`}>
+      <ul
+        id="nav-menu"
+        className={`nav-menu ${menuOpen ? "open" : ""}`}
+        ref={navMenuRef}
+      >
         {links.map((link) => (
           <li key={link.id}>
             <Link href={link.to}>{link.name}</Link>
@@ -92,7 +99,7 @@ const BurgerMenuButton = styled.div`
       transform: rotate(45deg) translate(-5px, -6px);
     }
   }
-  
+
   @media (max-width: 768px) {
     display: flex;
   }
