@@ -8,11 +8,7 @@ const NavBar: React.FC = () => {
   const links = [
     { id: 1, name: "About", to: "/about" },
     { id: 2, name: "Resume", to: "/resume" },
-    { id: 3, name: "Test", to: "/test" },
-    { id: 4, name: "Contact", to: "/contact" },
-    { id: 5, name: "Contact", to: "/contact" },
-    { id: 6, name: "Contact", to: "/contact" },
-    { id: 7, name: "Contact", to: "/contact" },
+    { id: 3, name: "Contact", to: "/contact" },
   ];
 
   const toggleMenu = () => {
@@ -84,7 +80,7 @@ const NavMenu = styled.ul`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    background-color: ${({ theme }) => theme.colors.gray2};
+    background-color: ${({ theme }) => theme.colors.gray3};
     position: absolute;
     top: 30px;
     right: 15px;
