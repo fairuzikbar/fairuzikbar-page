@@ -41,7 +41,6 @@ export default NavBar;
 
 const StyledWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
 `;
 
@@ -77,27 +76,29 @@ const NavMenu = styled.ul`
   list-style: none;
   display: flex;
   align-items: center;
+  margin-left: auto; /* Push the menu to the right side */
   li {
     margin-left: 1rem;
     color: ${({ theme }) => theme.colors.gray11};
   }
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    flex-direction: row; /* Horizontal direction */
     background-color: white;
     position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    max-height: 0;
+    top: 0; /* Keep the menu at the top */
+    right: -100%; /* Initially off-screen */
+    width: auto; /* Allow the menu to expand horizontally */
+    max-width: 100%; /* Limit the menu width */
+    height: 100%; /* Take the full height of the viewport */
     overflow: hidden;
-    transition: max-height 0.2s ease-in-out;
+    transition: right 0.2s ease-in-out; /* Slide in/out horizontally */
     li {
       margin: 0;
       padding: 0.5rem 1rem;
     }
     &.open {
-      max-height: 300px; /* Adjust this value as needed */
+      right: 0; /* Slide the menu in from the right */
     }
   }
 }`;
