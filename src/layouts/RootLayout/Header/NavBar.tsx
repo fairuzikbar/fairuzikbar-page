@@ -83,14 +83,14 @@ const NavMenu = styled.ul`
   }
 
   @media (max-width: 768px) {
-    flex-direction: row; /* Horizontal direction for both states */
+    flex-direction: column; /* Horizontal direction for both states */
     background-color: white;
     position: absolute;
     top: 0; /* Keep the menu at the top */
     right: -100%; /* Initially off-screen */
     width: auto; /* Allow the menu to expand horizontally */
     max-width: 100%; /* Limit the menu width */
-    height: 100%; /* Take the full height of the viewport */
+    height: auto; /* Take the full height of the viewport */
     overflow: hidden;
     transition: right 0.2s ease-in-out; /* Slide in/out horizontally */
     li {
