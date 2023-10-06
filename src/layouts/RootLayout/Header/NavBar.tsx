@@ -41,7 +41,6 @@ export default NavBar;
 
 const StyledWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
 `;
 
@@ -84,7 +83,7 @@ const NavMenu = styled.ul`
   }
 
   @media (max-width: 768px) {
-    flex-direction: row; /* Horizontal direction */
+    flex-direction: row; /* Horizontal direction for both states */
     background-color: white;
     position: absolute;
     top: 0; /* Keep the menu at the top */
