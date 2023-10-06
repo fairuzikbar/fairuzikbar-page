@@ -1,10 +1,9 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 
 const NavBar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const navMenuRef = useRef<HTMLUListElement>(null);
 
   const links = [
     { id: 1, name: "About", to: "/about" },
@@ -15,26 +14,6 @@ const NavBar: React.FC = () => {
     { id: 6, name: "Contact", to: "/contact" },
     { id: 7, name: "Contact", to: "/contact" },
   ];
-
-  useEffect(() => {
-    function handleOutsideClick(event: MouseEvent) {
-      if (
-        menuOpen &&
-        navMenuRef.current &&
-        !navMenuRef.current.contains(event.target as Node)
-      ) {
-        setMenuOpen(false);
-      }
-    }
-
-    if (menuOpen) {
-      document.addEventListener("click", handleOutsideClick);
-    }
-
-    return () => {
-      document.removeEventListener("click", handleOutsideClick);
-    };
-  }, [menuOpen]);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -47,17 +26,13 @@ const NavBar: React.FC = () => {
         <div className={`bar ${menuOpen ? "open" : ""}`} />
         <div className={`bar ${menuOpen ? "open" : ""}`} />
       </BurgerMenuButton>
-      <ul
-        id="nav-menu"
-        className={`nav-menu ${menuOpen ? "open" : ""}`}
-        ref={navMenuRef}
-      >
+      <NavMenu className={`nav-menu ${menuOpen ? "open" : ""}`}>
         {links.map((link) => (
           <li key={link.id}>
             <Link href={link.to}>{link.name}</Link>
           </li>
         ))}
-      </ul>
+      </NavMenu>
     </StyledWrapper>
   );
 };
@@ -65,16 +40,9 @@ const NavBar: React.FC = () => {
 export default NavBar;
 
 const StyledWrapper = styled.div`
-  flex-shrink: 0;
-  ul {
-    display: flex;
-    flex-direction: row;
-    li {
-      display: block;
-      margin-left: 1rem;
-      color: ${({ theme }) => theme.colors.gray11};
-    }
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const BurgerMenuButton = styled.div`
@@ -103,9 +71,17 @@ const BurgerMenuButton = styled.div`
   @media (max-width: 768px) {
     display: flex;
   }
-}
+}`;
 
-.nav-menu.open {
+const NavMenu = styled.ul`
+  list-style: none;
+  display: flex;
+  align-items: center;
+  li {
+    margin-left: 1rem;
+    color: ${({ theme }) => theme.colors.gray11};
+  }
+
   @media (max-width: 768px) {
     flex-direction: column;
     background-color: white;
@@ -113,13 +89,15 @@ const BurgerMenuButton = styled.div`
     top: 60px;
     left: 0;
     width: 100%;
-    max-height: 300px; /* Adjust this value as needed */
+    max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-in-out;
     li {
       margin: 0;
       padding: 0.5rem 1rem;
     }
+    &.open {
+      max-height: 300px; /* Adjust this value as needed */
+    }
   }
-}
-`
+}`;
