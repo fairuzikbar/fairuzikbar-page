@@ -84,7 +84,7 @@ const NavMenu = styled.ul`
   }
 
   @media (max-width: 768px) {
-    flex-direction: column; /* Horizontal direction */
+    flex-direction: row; /* Horizontal direction */
     background-color: white;
     position: absolute;
     top: 0; /* Keep the menu at the top */
