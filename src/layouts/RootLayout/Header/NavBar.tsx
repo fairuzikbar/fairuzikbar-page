@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const NavBar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,6 +15,24 @@ const NavBar: React.FC = () => {
     { id: 7, name: "Contact", to: "/contact" }
   ];
 
+  useEffect(() => {
+    // Add an event listener to close the menu when clicking outside of it
+    function handleOutsideClick(event: MouseEvent) {
+      if (menuOpen && !document.getElementById("nav-menu")?.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    }
+
+    if (menuOpen) {
+      document.addEventListener("click", handleOutsideClick);
+    }
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, [menuOpen]);
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -26,7 +44,7 @@ const NavBar: React.FC = () => {
         <div className={`bar ${menuOpen ? "open" : ""}`} />
         <div className={`bar ${menuOpen ? "open" : ""}`} />
       </BurgerMenuButton>
-      <ul className={`nav-menu ${menuOpen ? "open" : ""}`}>
+      <ul id="nav-menu" className={`nav-menu ${menuOpen ? "open" : ""}`}>
         {links.map((link) => (
           <li key={link.id}>
             <Link href={link.to}>{link.name}</Link>
@@ -34,10 +52,10 @@ const NavBar: React.FC = () => {
         ))}
       </ul>
     </StyledWrapper>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;
 
 const StyledWrapper = styled.div`
   flex-shrink: 0;
