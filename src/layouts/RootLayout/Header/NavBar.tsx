@@ -91,7 +91,6 @@ const NavMenu = styled.ul`
     width: auto; /* Allow the menu to expand horizontally */
     max-width: 100%; /* Limit the menu width */
     height: auto; /* Take the full height of the viewport */
-    max-height: 100%; /* Limit the menu width */
     overflow: hidden;
     transition: right 0.2s ease-in-out; /* Slide in/out horizontally */
     li {
