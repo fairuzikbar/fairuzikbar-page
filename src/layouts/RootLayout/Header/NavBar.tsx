@@ -1,28 +1,24 @@
-import styled from "@emotion/styled"
-import Link from "next/link"
+'use client'
+ 
+// import { useState } from 'react'
+import Link from "next/link";
 import { Dropdown } from 'flowbite-react';
+// import MobileNavModal from "./NavbarMobile";
 
 const NavBar: React.FC = () => {
   const links = [
-    { id: 1, name: "About", to: "/about" },
-    { id: 2, name: "Resume", to: "/resume" },
-    { id: 3, name: "Test", to: "/test" },
-    { id: 4, name: "Contact", to: "/contact" }
-  ]
-//   return (
-//     <StyledWrapper className="">
-//       <ul>
-//         {links.map((link) => (
-//           <li key={link.id}>
-//             <Link href={link.to}>{link.name}</Link>
-//           </li>
-//         ))}
-//       </ul>
-//     </StyledWrapper>
-//   )
-// }
+    { id: 1, name: "About Us", to: "/about" },
+    { id: 2, name: "Contact Us", to: "/contact-us" },
+    { id: 3, name: "Privacy Police", to: "/privacy-police" },
+  ];
 
-return (
+  // const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+
+ // const handleToggleMobileNav = () => {
+    // setIsMobileNavOpen(!isMobileNavOpen);
+  // };
+
+  return (
     <>
       {/* Desktop Navbar */}
       <div className="flex-shrink-0 hidden md:block">
@@ -57,18 +53,4 @@ return (
   );
 };
 
-
-export default NavBar
-
-// const StyledWrapper = styled.div`
-//   flex-shrink: 0;
-//   ul {
-//     display: flex;
-//     flex-direction: row;
-//     li {
-//       display: block;
-//       margin-left: 1rem;
-//       color: ${({ theme }) => theme.colors.gray11};
-//     }
-//   }
-// `
+export default NavBar;
