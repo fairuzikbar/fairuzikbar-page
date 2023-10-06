@@ -86,8 +86,8 @@ const NavMenu = styled.ul`
     flex-direction: column;
     background-color: white;
     position: absolute;
-    top: 10px;
-    left: 0;
+    top: 50px;
+    right: 10px;
     width: auto;
     max-height: 0;
     overflow: hidden;
