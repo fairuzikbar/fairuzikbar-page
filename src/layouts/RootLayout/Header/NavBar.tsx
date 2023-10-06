@@ -84,7 +84,7 @@ const NavMenu = styled.ul`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    background-color: ${({ theme }) => theme.colors.gray1};
+    background-color: ${({ theme }) => theme.colors.gray3};
     position: absolute;
     top: 30px;
     right: 15px;
