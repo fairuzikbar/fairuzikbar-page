@@ -41,7 +41,6 @@ export default NavBar;
 
 const StyledWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
 `;
 
@@ -71,12 +70,13 @@ const BurgerMenuButton = styled.div`
   @media (max-width: 768px) {
     display: flex;
   }
-}`;
+`;
 
 const NavMenu = styled.ul`
   list-style: none;
   display: flex;
   align-items: center;
+  margin-left: auto; /* Push the menu to the right side */
   li {
     margin-left: 1rem;
     color: ${({ theme }) => theme.colors.gray11};
@@ -88,8 +88,9 @@ const NavMenu = styled.ul`
     position: absolute;
     top: 60px;
     left: 0;
-    width: 100%;
-    max-height: 0;
+    width: auto; /* Allow the menu to expand horizontally */
+    max-width: 100%; /* Limit the menu width */
+    height: auto;
     overflow: hidden;
     transition: max-height 0.2s ease-in-out;
     li {
@@ -98,6 +99,7 @@ const NavMenu = styled.ul`
     }
     &.open {
       max-height: 300px; /* Adjust this value as needed */
+      width: 100%; /* Expand the menu horizontally */
     }
   }
-}`;
+`;
