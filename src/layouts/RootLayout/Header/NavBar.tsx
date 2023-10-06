@@ -80,7 +80,7 @@ const BurgerMenuButton = styled.div`
   }
 }
 
-.nav-menu {
+.nav-menu.open {
   @media (max-width: 768px) {
     flex-direction: column;
     background-color: white;
@@ -88,12 +88,9 @@ const BurgerMenuButton = styled.div`
     top: 60px;
     left: 0;
     width: 100%;
-    max-height: 0;
+    max-height: 300px; /* Adjust this value as needed */
     overflow: hidden;
     transition: max-height 0.2s ease-in-out;
-    &.open {
-      max-height: 300px; /* Adjust this value as needed */
-    }
     li {
       margin: 0;
       padding: 0.5rem 1rem;
