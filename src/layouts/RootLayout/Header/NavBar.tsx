@@ -52,7 +52,7 @@ const BurgerMenuButton = styled.div`
   .bar {
     width: 30px;
     height: 3px;
-    background-color: ${({ theme }) => theme.colors.gray11};
+    // background-color: ${({ theme }) => theme.colors.gray11};
     margin: 4px 0;
     transition: 0.4s;
   }
@@ -79,12 +79,12 @@ const NavMenu = styled.ul`
   align-items: center;
   li {
     margin-left: 1rem;
-    color: ${({ theme }) => theme.colors.gray11};
+    // color: ${({ theme }) => theme.colors.gray11};
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
-    background-color: ${({ theme }) => theme.colors.gray11};
+    // background-color: white;
     position: absolute;
     top: 30px;
     right: 15px;
