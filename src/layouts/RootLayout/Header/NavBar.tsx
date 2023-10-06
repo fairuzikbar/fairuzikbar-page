@@ -79,12 +79,12 @@ const NavMenu = styled.ul`
   align-items: center;
   li {
     margin-left: 1rem;
-    // color: ${({ theme }) => theme.colors.gray11};
+    color: ${({ theme }) => theme.colors.gray11};
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
-    background-color: ${({ theme })};
+    background-color: white;
     position: absolute;
     top: 30px;
     right: 15px;
