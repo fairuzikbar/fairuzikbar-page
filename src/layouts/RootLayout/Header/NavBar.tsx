@@ -20,31 +20,31 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <StyledWrapper>
-      <BurgerMenuButton onClick={toggleMenu}>
-        <div className={`bar ${menuOpen ? "open" : ""}`} />
-        <div className={`bar ${menuOpen ? "open" : ""}`} />
-        <div className={`bar ${menuOpen ? "open" : ""}`} />
+    <StyledNavBar>
+      <BurgerMenuButton onClick={toggleMenu} menuOpen={menuOpen}>
+        <div className="bar" />
+        <div className="bar" />
+        <div className="bar" />
       </BurgerMenuButton>
-      <NavMenu className={`nav-menu ${menuOpen ? "open" : ""}`}>
+      <NavMenu menuOpen={menuOpen}>
         {links.map((link) => (
           <li key={link.id}>
             <Link href={link.to}>{link.name}</Link>
           </li>
         ))}
       </NavMenu>
-    </StyledWrapper>
+    </StyledNavBar>
   );
 };
 
 export default NavBar;
 
-const StyledWrapper = styled.div`
+const StyledNavBar = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const BurgerMenuButton = styled.div`
+const BurgerMenuButton = styled.div<{ menuOpen: boolean }>`
   display: none;
   flex-direction: column;
   cursor: pointer;
@@ -57,22 +57,22 @@ const BurgerMenuButton = styled.div`
   }
   &.open {
     .bar:nth-child(1) {
-      transform: rotate(-45deg) translate(-5px, 6px);
+      transform: ${({ menuOpen }) => (menuOpen ? "rotate(-45deg) translate(-5px, 6px)" : "none")};
     }
     .bar:nth-child(2) {
-      opacity: 0;
+      opacity: ${({ menuOpen }) => (menuOpen ? "0" : "1")};
     }
     .bar:nth-child(3) {
-      transform: rotate(45deg) translate(-5px, -6px);
+      transform: ${({ menuOpen }) => (menuOpen ? "rotate(45deg) translate(-5px, -6px)" : "none")};
     }
   }
 
   @media (max-width: 768px) {
     display: flex;
   }
-}`;
+`;
 
-const NavMenu = styled.ul`
+const NavMenu = styled.ul<{ menuOpen: boolean }>`
   list-style: none;
   display: flex;
   align-items: center;
@@ -83,22 +83,19 @@ const NavMenu = styled.ul`
   }
 
   @media (max-width: 768px) {
-    flex-direction: column; /* Horizontal direction for both states */
+    flex-direction: column;
     background-color: white;
     position: absolute;
-    top: 0; /* Keep the menu at the top */
-    right: -100%; /* Initially off-screen */
-    width: auto; /* Allow the menu to expand horizontally */
-    max-width: 100%; /* Limit the menu width */
-    height: auto; /* Take the full height of the viewport */
+    top: 0;
+    right: ${({ menuOpen }) => (menuOpen ? "0" : "-100%")}; /* Slide in/out horizontally */
+    width: auto;
+    max-width: 100%;
+    height: auto;
     overflow: hidden;
     transition: right 0.2s ease-in-out; /* Slide in/out horizontally */
     li {
       margin: 0;
       padding: 0.5rem 1rem;
     }
-    &.open {
-      right: 0; /* Slide the menu in from the right */
-    }
   }
-}`;
+`;
