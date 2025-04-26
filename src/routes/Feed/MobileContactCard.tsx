@@ -11,8 +11,8 @@ import styled from "@emotion/styled"
 const MobileContactCard: React.FC = () => {
   return (
     <>
-      <StyledTitle>💬 Contact</StyledTitle>
       <StyledWrapper>
+        <div className="top">💬 Contact</div>
         {CONFIG.profile.github && (
           <a
             href={`https://github.com/${CONFIG.profile.github}`}
@@ -61,16 +61,14 @@ const MobileContactCard: React.FC = () => {
 
 export default MobileContactCard
 
-const StyledTitle = styled.div`
-  padding: 0.25rem;
-  margin-bottom: 0.75rem;
-`
 const StyledWrapper = styled.div`
   @media (min-width: 1024px) {
     display: none;
   }
-  display: flex;
-  flex-direction: column;
+  > .top {
+    padding: 0.25rem;
+    margin-bottom: 0.75rem;
+  }
   padding: 0.25rem;
   border-radius: 1rem;
   background-color: ${({ theme }) =>
