@@ -2,7 +2,6 @@ import { CONFIG } from "site.config"
 import React from "react"
 import { AiFillCodeSandboxCircle } from "react-icons/ai"
 import styled from "@emotion/styled"
-import { Emoji } from "src/components/Emoji"
 
 const MobileServiceCard: React.FC = () => {
   if (!CONFIG.projects) return null
@@ -10,7 +9,6 @@ const MobileServiceCard: React.FC = () => {
     <>
       <div className="top">🌟 Service</div>
       <StyledWrapper>
-        <div className="top">🌟 Service</div>
         {CONFIG.projects.map((project, idx) => (
           <a
             key={idx}
@@ -33,7 +31,7 @@ const StyledWrapper = styled.div`
   @media (min-width: 1024px) {
     display: none;
   }
-  > .top {
+  .top {
     padding: 0.25rem;
     margin-bottom: 0.75rem;
   }
