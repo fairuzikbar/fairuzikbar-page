@@ -48,6 +48,7 @@ const StyledWrapper = styled.div`
     padding: 0.5rem;
     margin-bottom: 1rem;
     border-radius: 1rem;
+    text-align: center;
     background-color: ${({ theme }) =>
       theme.scheme === "light" ? "white" : theme.colors.gray4};
     > .wrapper {
@@ -64,6 +65,7 @@ const StyledWrapper = styled.div`
           font-weight: 700;
         }
         > .mid {
+          text-align: center;
           margin-bottom: 0.5rem;
           font-size: 0.875rem;
           line-height: 1.25rem;
