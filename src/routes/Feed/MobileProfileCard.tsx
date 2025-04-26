@@ -45,7 +45,6 @@ const StyledWrapper = styled.div`
     margin-bottom: 0.75rem;
   }
   > .mid {
-    text-align: center;
     padding: 0.5rem;
     margin-bottom: 1rem;
     border-radius: 1rem;
@@ -55,6 +54,7 @@ const StyledWrapper = styled.div`
       display: flex;
       gap: 0.5rem;
       align-items: center;
+      text-align: center;
       > .wrapper {
         height: fit-content;
         > .top {
