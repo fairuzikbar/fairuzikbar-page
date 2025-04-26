@@ -10,6 +10,8 @@ import ProfileCard from "./ProfileCard"
 import ServiceCard from "./ServiceCard"
 import ContactCard from "./ContactCard"
 import PostList from "./PostList"
+import MobileServiceCard from "./MobileServiceCard"
+import MobileContactCard from "./MobileContactCard"
 
 const HEADER_HEIGHT = 73
 
@@ -36,8 +38,8 @@ const Feed: React.FC<Props> = () => {
         <FeedHeader />
         <PostList q={q} />
         <MobileProfileCard />
-        <ServiceCard />
-        <ContactCard />
+        <MobileServiceCard />
+        <MobileContactCard />
         <div className="footer" style={{textAlign: "center"}}>
           <Footer />
         </div>
