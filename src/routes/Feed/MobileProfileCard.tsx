@@ -52,17 +52,10 @@ const StyledWrapper = styled.div`
       theme.scheme === "light" ? "white" : theme.colors.gray4};
     > .wrapper {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center; /* <== Tambahkan ini supaya semua anak teks center */
       gap: 0.5rem;
-      
+      align-items: center;
       > .wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center; /* <== Tambahkan ini juga */
-        width: 100%; /* <== Ini opsional supaya full width */
+        height: fit-content;
         > .top {
           font-size: 1.25rem;
           line-height: 1.75rem;
