@@ -29,14 +29,16 @@ const Feed: React.FC<Props> = () => {
         <TagList />
       </div>
       <div className="mid">
-        <MobileProfileCard />
         <SearchInput value={q} onChange={(e) => setQ(e.target.value)} />
         <div className="tags">
           <TagList />
         </div>
         <FeedHeader />
         <PostList q={q} />
-        <div className="footer">
+        <MobileProfileCard />
+        <ServiceCard />
+        <ContactCard />
+        <div className="footer" style={{textAlign: "center"}}>
           <Footer />
         </div>
       </div>
