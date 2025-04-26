@@ -40,7 +40,7 @@ const Feed: React.FC<Props> = () => {
         <MobileProfileCard />
         <MobileServiceCard />
         <MobileContactCard />
-        <div className="footer" style={{textAlign: "center"}}>
+        <div className="footer" style={{textAlign: "center", paddingTop: "1rem"}}>
           <Footer />
         </div>
       </div>

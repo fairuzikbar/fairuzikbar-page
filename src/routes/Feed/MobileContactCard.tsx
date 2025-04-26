@@ -73,11 +73,8 @@ const StyledWrapper = styled.div`
   @media (min-width: 1024px) {
     display: none;
   }
-  .top {
-    padding: 0.25rem;
-    margin-bottom: 0.75rem;
-  }
   padding: 0.25rem;
+  margin-bottom: 1rem;
   border-radius: 1rem;
   background-color: ${({ theme }) =>
     theme.scheme === "light" ? "white" : theme.colors.gray4};
