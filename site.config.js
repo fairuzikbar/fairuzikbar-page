@@ -3,8 +3,8 @@ const CONFIG = {
   profile: {
     name: "Fairuz Ikbar",
     image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "Software Engineer",
-    bio: "-",
+    role: "QA Automation Engineer",
+    bio: "Di dunia yang terus berubah, aku mencatat pengalaman, ide, dan perjalanan. Ini adalah ruangku untuk berbagi, berkembang, dan berpetualang.",
     email: "fairuz.ikbar.w@gmail.com",
     linkedin: "fairuzikbar",
     github: "fairuzikbar",
@@ -13,23 +13,45 @@ const CONFIG = {
   projects: [
     {
       name: `portfolio`,
-      href: "https://fairuzikbar.github.io",
+      href: "https://fairuzikbar.vercel.app",
     },
   ],
   // blog setting (required)
   blog: {
-    title: "fairuzikbar",
-    description: "welcome to my blog!",
-    theme: "auto", // ['light', 'dark', 'auto']
+    title: "typedbyikbar",
+    description: "Journey through Code and Beyond",
+    theme: "dark", // ['light', 'dark', 'auto']
   },
 
   // CONFIG configration (required)
-  link: "https://fairuzikbar.vercel.app/",
-  since: 2023, // If leave this empty, current year will be used.
+  link: "https://typedbyikbar.vercel.app/",
+  since: 2025, // If leave this empty, current year will be used.
   lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
   seo: {
-    keywords: ["Blog", "Website", "Portfolio", "Tutorial", "Coding", "Programming", "Fairuz", "Ikbar", "fairuzikbar"],
+    keywords: [
+      "Blog Coding",
+      "Coding Journey",
+      "Belajar Coding",
+      "Big Data",
+      "Frontend Development",
+      "Backend Development",
+      "QA Automation",
+      "Testing Playwright",
+      "NodeJS",
+      "ExpressJS",
+      "ViteJS",
+      "JavaScript",
+      "Python",
+      "SQL Advanced",
+      "Katalon",
+      "Programming Journey",
+      "Tutorial CRUD",
+      "Tutorial Coding",
+      "Typed by Ikbar",
+      "Ikbar",
+      "Fairuz Ikbar"
+    ],
   },
 
   // notion configuration (required)
@@ -51,7 +73,7 @@ const CONFIG = {
     },
   },
   utterances: {
-    enable: false,
+    enable: true,
     config: {
       repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "",
       "issue-term": "og:title",
