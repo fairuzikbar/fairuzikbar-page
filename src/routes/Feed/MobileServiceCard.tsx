@@ -8,6 +8,7 @@ const MobileServiceCard: React.FC = () => {
   if (!CONFIG.projects) return null
   return (
     <>
+      <div className="top">🌟 Service</div>
       <StyledWrapper>
         <div className="top">🌟 Service</div>
         {CONFIG.projects.map((project, idx) => (

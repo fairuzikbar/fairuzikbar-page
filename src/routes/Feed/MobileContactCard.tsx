@@ -11,8 +11,8 @@ import styled from "@emotion/styled"
 const MobileContactCard: React.FC = () => {
   return (
     <>
+      <div className="top">💬 Contact</div>
       <StyledWrapper>
-        <div className="top">💬 Contact</div>
         {CONFIG.profile.github && (
           <a
             href={`https://github.com/${CONFIG.profile.github}`}
