@@ -57,6 +57,7 @@ const StyledWrapper = styled.div`
       align-items: center;
       text-align: center;
       > .wrapper {
+        text-align: center;
         height: fit-content;
         > .top {
           font-size: 1.25rem;
