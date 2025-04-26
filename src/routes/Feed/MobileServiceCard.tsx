@@ -7,7 +7,7 @@ const MobileServiceCard: React.FC = () => {
   if (!CONFIG.projects) return null
   return (
     <>
-      <div className="top">🌟 Service</div>
+      <StyledTitle>🌟 Service</StyledTitle>
       <StyledWrapper>
         {CONFIG.projects.map((project, idx) => (
           <a
@@ -27,11 +27,19 @@ const MobileServiceCard: React.FC = () => {
 
 export default MobileServiceCard
 
+const StyledTitle = styled.div`
+  @media (min-width: 1024px) {
+    display: none;
+  }
+  padding: 0.25rem;
+  margin-bottom: 0.75rem;
+`
+
 const StyledWrapper = styled.div`
   @media (min-width: 1024px) {
     display: none;
   }
-  .top {
+  top {
     padding: 0.25rem;
     margin-bottom: 0.75rem;
   }

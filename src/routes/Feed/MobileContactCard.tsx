@@ -11,7 +11,7 @@ import styled from "@emotion/styled"
 const MobileContactCard: React.FC = () => {
   return (
     <>
-      <div className="top">💬 Contact</div>
+      <StyledTitle>💬 Contact</StyledTitle>
       <StyledWrapper>
         {CONFIG.profile.github && (
           <a
@@ -60,6 +60,14 @@ const MobileContactCard: React.FC = () => {
 }
 
 export default MobileContactCard
+
+const StyledTitle = styled.div`
+  @media (min-width: 1024px) {
+    display: none;
+  }
+  padding: 0.25rem;
+  margin-bottom: 0.75rem;
+`
 
 const StyledWrapper = styled.div`
   @media (min-width: 1024px) {
