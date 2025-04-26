@@ -90,7 +90,6 @@ const StyledWrapper = styled.div`
   }
 
   > .mid {
-    text-align: center;
     grid-column: span 12 / span 12;
 
     @media (min-width: 1024px) {
