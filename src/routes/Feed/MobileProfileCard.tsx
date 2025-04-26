@@ -11,7 +11,7 @@ const MobileProfileCard: React.FC<Props> = () => {
   return (
     <StyledWrapper>
       <div className="top">💻 Profile</div>
-      <div className="mid">
+      <div className="mid" style={{ textAlign: "center" }}>
         <div className="wrapper">
           <Image
             src={CONFIG.profile.image}
@@ -54,7 +54,6 @@ const StyledWrapper = styled.div`
       display: flex;
       gap: 0.5rem;
       align-items: center;
-      text-align: center;
       > .wrapper {
         height: fit-content;
         > .top {
