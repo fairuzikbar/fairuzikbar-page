@@ -55,6 +55,9 @@ const StyledWrapper = styled.div`
       gap: 0.5rem;
       align-items: center;
       > .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;  
         height: fit-content;
         > .top {
           font-size: 1.25rem;
