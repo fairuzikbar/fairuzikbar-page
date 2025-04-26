@@ -36,12 +36,11 @@ const StyledTitle = styled.div`
 `
 
 const StyledWrapper = styled.div`
-  display: block;
-
   @media (min-width: 1024px) {
-    display: flex;
-    flex-direction: column;
+    display: none;
   }
+  display: flex;
+  flex-direction: column;
   padding: 0.25rem;
   margin-bottom: 2.25rem;
   border-radius: 1rem;

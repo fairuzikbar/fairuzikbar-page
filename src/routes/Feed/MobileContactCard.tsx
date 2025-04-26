@@ -66,12 +66,11 @@ const StyledTitle = styled.div`
   margin-bottom: 0.75rem;
 `
 const StyledWrapper = styled.div`
-  display: block;
-
   @media (min-width: 1024px) {
-    display: flex;
-    flex-direction: column;
+    display: none;
   }
+  display: flex;
+  flex-direction: column;
   padding: 0.25rem;
   border-radius: 1rem;
   background-color: ${({ theme }) =>
