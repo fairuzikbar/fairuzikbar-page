@@ -57,7 +57,8 @@ const StyledWrapper = styled.div`
       > .wrapper {
         display: flex;
         flex-direction: column;
-        align-items: center;  
+        align-items: center;
+        text-align: center;
         height: fit-content;
         > .top {
           font-size: 1.25rem;
@@ -72,7 +73,6 @@ const StyledWrapper = styled.div`
           color: ${({ theme }) => theme.colors.gray11};
         }
         > .btm {
-          text-align: center;
           font-size: 0.875rem;
           line-height: 1.25rem;
         }
