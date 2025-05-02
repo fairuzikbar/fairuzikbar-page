@@ -8,7 +8,7 @@ const NavBar: React.FC = () => {
   const links = [
     { id: 1, name: "About", to: "/about" },
     { id: 2, name: "Resume", to: "/resume" },
-    { id: 3, name: "Contact", to: "/contact" },
+    // { id: 3, name: "Contact", to: "/contact" },
   ];
 
   const toggleMenu = () => {

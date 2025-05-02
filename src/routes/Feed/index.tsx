@@ -35,9 +35,9 @@ const Feed: React.FC<Props> = () => {
         <div className="tags">
           <TagList />
         </div>
+        <MobileProfileCard />
         <FeedHeader />
         <PostList q={q} />
-        <MobileProfileCard />
         <MobileServiceCard />
         <MobileContactCard />
         <div className="footer" style={{textAlign: "center", paddingTop: "1rem"}}>
